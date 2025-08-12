@@ -49,8 +49,8 @@ extra_javascript:
 markdown_extensions:
   - pymdownx.magiclink:
       repo_url_shorthand: true
-      user: dan1229
-      repo: obsidian-dans-notes
+      user: majeedtanveer
+      repo: quantum-info
       normalize_issue_symbols: true
   - pymdownx.superfences
   - pymdownx.tasklist:
