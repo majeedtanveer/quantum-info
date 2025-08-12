@@ -1,8 +1,0 @@
-{
-	"nodes":[
-		{"id":"c3ac97b5463977be","type":"text","text":"NP problems\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tBQP","x":-320,"y":-220,"width":460,"height":277},
-		{"id":"4364b8c36aeff0a7","type":"text","text":"NP-complete problems","x":-210,"y":-163,"width":240,"height":60},
-		{"id":"f7bf43209ab16043","x":-215,"y":-81,"width":250,"height":60,"type":"text","text":"P problems"}
-	],
-	"edges":[]
-}

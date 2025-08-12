@@ -1,1 +1,0 @@
-The oracle does nothing with the state if it is the solution. If it is the solution it adds a Phase (for example -1). An oracle is a black box whose internal working are not important, the oracle has the ability to recognize the problem

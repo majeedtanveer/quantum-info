@@ -1,2 +1,0 @@
-For classical bits there is only one non-trivial gate, the NOT gate.
-For qubits there are infinite possible gates. For example the [[Pauli Gates]], the [[Hadamard-Gate]], [[Phase-Gate]] and [[T-Gate]].

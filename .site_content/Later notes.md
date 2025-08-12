@@ -1,2 +1,0 @@
-To make a transformation deterministic one can introduce an [[Ancilla]] which flags or encodes the success or fail probability.
-$U : |\psi\rangle_\text{sys} \otimes |0\rangle_\text{anc} \to \sum_i (T_i |\psi\rangle_\text{sys}) \otimes |i\rangle_\text{anc}$
