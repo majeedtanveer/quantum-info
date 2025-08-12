@@ -35,10 +35,6 @@ theme:
   # Custom templates and overrides
   custom_dir: .overrides
 
-nav:
-  # Automatically generate navigation from the docs directory
-  - ...
-
 markdown_extensions:
   - pymdownx.magiclink:
       repo_url_shorthand: true
