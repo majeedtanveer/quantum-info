@@ -70,9 +70,9 @@ plugins:
   - search
   - awesome-pages
   - tags
-  - mkdocs-simple-hooks:
-      hooks:
-        on_page_markdown: "docs.hooks:fix_markdown_spacing"
+  # - mkdocs-simple-hooks:
+  #     hooks:
+  #       on_page_markdown: "docs.hooks:fix_markdown_spacing"
 
 # Source directory (where your markdown files are)
 docs_dir: md-files
