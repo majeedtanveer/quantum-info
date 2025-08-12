@@ -193,13 +193,13 @@ Resource Count:
 3. Arbitrary single-qubit rotations can be approximated by a finite set of single-qubit gates (e.g. [[T-Gate]] and [[Hadamard-Gate]])
 A concatenation of Rotations is another [[Rotation Gates|Rotation]] with an angle of an **irrational** multiple of $\pi$ in the Bloch sphere. Example:
 $$
-\begin{align}
+\begin{aligned}
 R_z(\pi/4)R_x(\pi/4) &= e^{-i\frac{\pi}{8}Z}e^{-\frac{\pi}{8}X} \\ 
 &=(\cos\frac{\pi}{8}\mathbb{I}-i \sin{\frac{\pi}{8}}Z)(\cos\frac{\pi}{8}\mathbb{I}-i \sin{\frac{\pi}{8}}X) \\
 &=\cos^2{\frac{\pi}{8}}\mathbb{I}-i \cos{\frac{\pi}{8}}\sin{\frac{\pi}{8}}X-i\sin{\frac{\pi}{8}}\cos{\frac{\pi}{8}}Z-\sin^2{\frac{\pi}{8}}ZX \\
 &=\cos^2{\frac{\pi}{8}}\mathbb{I}-i \sin{\frac{\pi}{8}}(\cos{\frac{\pi}{8}}(X+Z)+\sin{\frac{\pi}{8}Y}) \\
 &= \cos{\frac{\theta}{2}}\mathbb{I}-i \sin{\frac{\theta}{2}}(\vec{n} \cdot \vec{\sigma}) = R_\vec{n}(\theta)
-\end{align}
+\end{aligned}
 $$
 With $\vec{n}=(\cos\frac{\pi}{8},\sin\frac{\pi}{8},\cos\frac{\pi}{8})$ 
 $\cos\frac{\theta}{2}=\cos^2\frac{\pi}{8}$ is a transcendental equation, this means that $\theta$ is an irrational multiple of $\pi$. That is why we never revisit the same point on the circle!

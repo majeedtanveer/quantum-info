@@ -47,17 +47,17 @@ Commutation and anticommutation relations are preserved under such continuous de
 
 Finally, one can write the logical basis states explicitly in the Z-Basis:
 $$
-\begin{align}
+\begin{aligned}
 |0\rangle_L^{(1)}|0\rangle_L^{(2)} &\propto \frac{1}{2} (\mathbb{I}+Z_L^{(1)})\frac{1}{2} (\mathbb{I}+Z_L^{(2)}) \prod_+ \frac{1}{2} (\mathbb{I}+S_X^{(+)})\prod_\Box\frac{1}{2} (\mathbb{I}+S_Z^{(\Box)})|0\rangle^{\otimes n} \\
 &= \prod_+ \frac{1}{2} (\mathbb{I}+S_X^{(+)})\frac{1}{2}(\mathbb{I}+Z_L^{(1)})\frac{1}{2} (\mathbb{I}+Z_L^{(2)})\prod_\Box\frac{1}{2} (\mathbb{I}+S_Z^{(\Box)}) |0\rangle^{\otimes n}\\
 &=\prod_+ \frac{1}{2} (\mathbb{I}+S_X^{(+)}) |0\rangle^{\otimes n}\\
 |1\rangle_L^{(1)}|0\rangle_L^{(2)} &= X_L^{(1)} |0\rangle_L^{(1)}|0\rangle_L^{(2)} \\
-\end{align}
+\end{aligned}
 $$
 Intuitively the following happens: We maximize the deformations of the strings, we can change the order of the terms because the logical operators commute with the stabilizers. The string could be deformed again generally. But in this case the $|0\rangle^{\otimes n}$ state is the eigenstate for the projector of the $Z$-basis for all qubits, so we get an eigenvalue +1 for those projectors, so only the $S_X^{(+)}$ projectors remain. Remember that the last stabilizer is redundant and doesn‘t change the subspace of the projectors, meaning that the eigenvalues of the stabilizers already have been considered.
 Example L=2:
 $$
-\begin{aligned}
+\begin{aligneded}
 
 \Bigg(\prod_{i=1}^{4}\frac{\mathbb{I}+S_X^{(i)}}{2}\Bigg)\,|0\rangle^{\otimes 8}
 
@@ -81,7 +81,7 @@ $$
 
 \big)
 
-\end{aligned}
+\end{aligneded}
 $$
 
 ### QEC using the toric code

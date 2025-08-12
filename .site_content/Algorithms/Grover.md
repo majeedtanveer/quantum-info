@@ -55,12 +55,12 @@ Rewrite the initial state
 
 $$
 
-\begin{align}
+\begin{aligned}
 | \Psi \rangle &= \frac{1}{\sqrt{N}} \sum_x | x\rangle = \frac{1}{\sqrt{N}} \left(\sum^{’’} |x \rangle + \sum^{’} |x \rangle \right) \\
 &= \frac{1}{\sqrt{N}} \left(\sqrt{N-M} \frac{1}{\sqrt{N-M}} \sum^{’’} |x \rangle + \sqrt{M} \frac{1}{\sqrt{M}} \sum^{’} |x \rangle \right) \\
 &= \sqrt{\frac{N-M}{N}} | \alpha \rangle + \sqrt{\frac{M}{N}} | \beta \rangle \\
 &= \sqrt{1-\varepsilon} | \alpha \rangle + \sqrt{\varepsilon} | \beta \rangle
-\end{align}
+\end{aligned}
 $$
 With $\sum^{’’}$ being the sum over all states which are **not** solutions, $\sum^{’}$ being the sum over all states which are solutions and $\varepsilon = \frac{M}{n}$ typically $\varepsilon \ll 1$ (solutions are hard to find)
 - Probability to find (measure) a particular solution $|x \rangle$ in $| \psi \rangle: \frac{1}{N}$ 
@@ -69,7 +69,7 @@ The oracle unitary $O$ can be written as
 	$O= 1-2 \sum^{’} |x \rangle \langle x |$
 	Let‘s apply one Grover step $G=UO$ to $| \psi \rangle$:
 $$
-\begin{align}
+\begin{aligned}
 O | \psi \rangle &= O(\sqrt{1-\varepsilon} | \alpha \rangle + \sqrt{\varepsilon} | \beta \rangle) \\
 &= \sqrt{1-\varepsilon} | \alpha \rangle - \sqrt{\varepsilon} | \beta \rangle \\
 &= (\sqrt{1-\varepsilon} | \alpha \rangle + \sqrt{\varepsilon} | \beta \rangle)- 2\sqrt{\varepsilon} | \beta \rangle \\
@@ -79,7 +79,7 @@ UO |\psi \rangle &= (2 |\psi \rangle \langle \psi | - \mathbb{I})(|\psi \rangle 
 &= (1-4 \varepsilon)|\psi \rangle+2\sqrt{\varepsilon} | \beta \rangle \\
 &= (1-4\varepsilon) (\sqrt{1-\varepsilon} | \alpha \rangle + \sqrt{\varepsilon} | \beta \rangle)+2\sqrt{\varepsilon} | \beta \rangle \\
 &= (1-4 \varepsilon) \sqrt{1-\varepsilon} |\alpha \rangle + \sqrt{\varepsilon}(3-4 \varepsilon)|\beta \rangle
-\end{align}
+\end{aligned}
 $$
 Now, the probability to find the system in any solution sate measuring $UO\psi\rangle$ is
 	$p=(\sqrt\varepsilon(3-4\varepsilon))^2=9 \varepsilon=9\frac{M}{N}$, the probability has increased by a factor of 9!
@@ -116,7 +116,7 @@ This, the Grover algorithm is **optimal**
 
 If we choose the integer $k$ closest to $\tilde{k}$, the failure probability will still be small:
 $$
-\begin{align}
+\begin{aligned}
 p_\mathrm{fail} &= \cos\left({\frac{2k+1}{2}\theta}\right)^2 \\
 &= \cos\left({\frac{2\tilde{k}+1}{2}\theta} + (k-\tilde{k}) \theta \right)^2 \\
 &= \cos\left(\frac{\pi}{2} + (k-\tilde{k}) \theta \right)^2 \\
@@ -124,7 +124,7 @@ p_\mathrm{fail} &= \cos\left({\frac{2k+1}{2}\theta}\right)^2 \\
 &\leq \sin\left(\frac{\theta}{2}\right)^2
 \mathrm{for} \, |k-\tilde{k}| \leq \frac{1}{2}, \mathrm{and} \, \theta \ll 1 \\
 &= \frac{M}{N} \; \mathrm{small}
-\end{align}
+\end{aligned}
 $$
 
 Number of queries:

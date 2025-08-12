@@ -23,12 +23,12 @@ $H^{\otimes n} |i \rangle = \frac{1}{\sqrt{2^n}} \sum_{j \in \{0,1\}^n} (-1)^{i 
 with $i \cdot j = \sum_{k=1}^n i_n j_n$ as the inner product of the n-bit strings $i,j \in \{0,1\}^n$
 Example:
 $$
-\begin{align}
+\begin{aligned}
 H^{\otimes 2} |01 \rangle &=  \frac{1}{\sqrt{2^n}} \sum_{j \in \{0,1\}^n} (-1)^{01 \cdot j} |j \rangle\\
 &= \frac{1}{2}((-1)^{01 \cdot 00} | 00 \rangle + (-1)^{01 \cdot 01} | 01 \rangle + (-1)^{01 \cdot 10} | 10 \rangle + (-1)^{01 \cdot 11} | 11 \rangle) \\
 &= \frac{1}{2} (|00\rangle - |01\rangle + |10\rangle - |11\rangle) \\
 &= \frac{1}{\sqrt{2}} (|0 \rangle + |1 \rangle ) \otimes \frac{1}{\sqrt{2}} (|0 \rangle - |1 \rangle)
-\end{align}
+\end{aligned}
 $$
 ## Qiskit
 

@@ -9,14 +9,14 @@ $$
 Example: $x=3, N=7$
 
 $$
-\begin{align}
+\begin{aligned}
 x^1 \mod N = 3^1 \mod 7 = 3 \\
 x^2 \mod N = 3^2 \mod 7 = 2 \\
 x^3 \mod N = 3^3 \mod 7 = 6 \\
 x^4 \mod N = 3^4 \mod 7 = 4 \\
 x^5 \mod N = 3^5 \mod 7 = 5 \\
 x^6 \mod N = 3^6 \mod 7 = 1 \\
-\end{align}
+\end{aligned}
 $$
 $\rightarrow$ order of 3 modulo 7 is $r=6$
 This is then cyclic, if we continue:
@@ -31,24 +31,24 @@ Not that we are using the convention that when $N \leq y \leq 2^L-1$ the express
 In other words, $U$ acts non-trivially only when $0 \leq y \leq N-1$.
 The following states $|u_s\rangle\equiv \frac{1}{\sqrt{r}} \sum_{k=0}^{r-1} \exp\left(-\frac{2 \pi i s k}{r}\right) |x^k \mod N\rangle$ are eigenstates of $U$ as shown below:
 $$
-\begin{align}
+\begin{aligned}
 U|u_s\rangle &= \frac{1}{\sqrt{r}} \sum_{k=0}^{r-1} \exp\left(-\frac{2 \pi i s k}{r}\right) U|x^k \mod N\rangle \\
 &= \frac{1}{\sqrt{r}} \sum_{k=0}^{r-1} \exp\left(-\frac{2 \pi i s k}{r}\right) |x^{k+1} \mod N\rangle \\
 &= \frac{1}{\sqrt{r}} \sum_{k’=1}^{r} \exp\left(-\frac{2 \pi i s (k’-1)}{r}\right) |x^{k’+1} \mod N\rangle \\
 &=\exp\left(\frac{2 \pi i s}{r}\right)\frac{1}{\sqrt{r}} \sum_{k’=0}^{r-1} \exp\left(-\frac{2 \pi i s k’}{r}\right) |x^{k’+1} \mod N\rangle \\
 &=\exp\left(\frac{2 \pi i s}{r}\right)|u_s\rangle
-\end{align}
+\end{aligned}
 $$
 We used $k’=k+1$ and the fact that the $k’=r$ term is the same as the $k’=0$ term which allows us to shift the sum. Using phase estimation will allow is it obtain with high accuracy the corresponding eigenvalues $\exp\left(-\frac{2 \pi i s}{r}\right)$ from which we will be able to obtain the order $r$ with some extra work.
 Problem: Preperation of $|u_s\rangle$ would require knowledge about $r$ so this is impossible.
 However we don‘t need this since the superposition of all eigenstates (using the [[Kronecker Delta]] identity):
 $$
-\begin{align}
+\begin{aligned}
 \frac{1}{\sqrt{r}}\sum_{s=0}^{r-1} |u_s\rangle &= \frac{1}{r}\sum_{s=0}^{r-1}\sum_{k=0}^{r-1} \exp\left(-\frac{2 \pi i s k}{r}\right) |x^k \mod N\rangle \\
 &= \frac{1}{r}\sum_{k=0}^{r-1} r \delta_{k0} |x^k \mod N\rangle \\
 &= |x^0 \mod N\rangle \\
 &= |1\rangle = |0\rangle|0\rangle…|0\rangle|1\rangle
-\end{align}
+\end{aligned}
 $$
 
 ### Modular exponentiation
@@ -58,11 +58,11 @@ For the algorithm to be efficient, we need efficient procedures to implement con
 
 We need to realize the transformation
 $$
-\begin{align}
+\begin{aligned}
 |z\rangle | y \rangle &\rightarrow |z\rangle U^{z_t 2 ^{t-1}}…U^{z_1 2 ^{0}} |y\rangle \\
 &= |z\rangle |x^{z_t2^{t-1}} \times … \times x^{z_12^{0} y \mod N} \\
 &= |z\rangle|x^zy \mod N \rangle
-\end{align}
+\end{aligned}
 $$
 This can be achieved using **reversible computing** using temporarily a third register.
 For that we compute $x^{2^j} \mod N$ by squaring $x^{2^j-1} \mod N$ up to $x^{2^t-1}$.
