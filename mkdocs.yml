@@ -47,5 +47,37 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js
 
 markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: dan1229
+      repo: obsidian-dans-notes
+      normalize_issue_symbols: true
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.extra
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      baselevel: 1
+      toc_depth: 3
+      separator: "-"
+  - def_list
+  - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - tables
+  - footnotes
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+  - awesome-pages
+  - tags
