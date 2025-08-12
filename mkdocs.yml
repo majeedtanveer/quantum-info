@@ -6,3 +6,6 @@ site_name: Majeed's Quantum Notes
 site_url: https://majeedtanveer.github.io/quantum-info
 site_author: Majeed Tanveer
 site_description: A description of your site
+
+# Source directory (where your markdown files are)
+docs_dir: .site_content
