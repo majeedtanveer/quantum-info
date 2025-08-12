@@ -2,10 +2,10 @@
 # Great place to start to see if this is working / what you need to fix
 # or customzie
 
-site_name: Majeed's Quantum Notes
+site_name: Majeed's Quantum Information Notes
 site_url: https://majeedtanveer.github.io/quantum-info
 site_author: Majeed Tanveer
-site_description: A description of your site
+site_description: My Quantum Info Notes for the 
 
 # Source directory (where your markdown files are)
 docs_dir: .site_content
@@ -39,3 +39,5 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
+
+markdown_extensions: [mathjax]
