@@ -7,7 +7,7 @@ $|\psi\rangle_L=\alpha|0\rangle_L+|1\rangle_L=\alpha|000\rangle + \beta|111\rang
 ### Algorithm Steps
 1. Encoding: quantum circuit $U_\text{enc}: |\psi\rangle\rightarrow|\psi\rangle_L$
 	Use two [[Ancilla]] qubits initialized in $|0\rangle$:
-	![[Pasted image 20250810181304.png|400]]
+	![[Images/Pasted image 20250810181304.png|400]]
 	$|\psi\rangle|0\rangle|0\rangle\rightarrow|\psi\rangle_L$
 2.  Possible occurrence of errors:
 	E.g. bit flip error on qubit 1: $X_1$
@@ -18,7 +18,7 @@ $|\psi\rangle_L=\alpha|0\rangle_L+|1\rangle_L=\alpha|000\rangle + \beta|111\rang
 
 ### Circuit implementation
 
-![[Pasted image 20250811152057.png]]
+![[Images/Pasted image 20250811152057.png]]
 
 ### Errors
 
@@ -41,7 +41,7 @@ $\Rightarrow$ 3-qubit code is not a **complete** code.
 #### Robustness
 The probability to correct error(s) is the following:
 $p_\text{corr}=(1-p)^3+3p(1-p)^2=1-3p^2+2p^3$
-![[Pasted image 20250811154800.jpg]]
+![[Images/Pasted image 20250811154800.jpg]]
 
 Here for $p<\frac{1}{2}$, $p_\text{corr} > 1-p$, thus better protection offered by 3-qubit code.
 
@@ -60,6 +60,6 @@ S_2=Z_2Z_3
 
 \right\} \quad S_i|\psi\rangle_L=|\psi\rangle_L
 $$
-![[Pasted image 20250811163959.png]]
+![[Images/Pasted image 20250811163959.png]]
 
 The logical operators are $Z_L=Z_1Z_2Z_3$ and $X_L=X_1X_2X_3$

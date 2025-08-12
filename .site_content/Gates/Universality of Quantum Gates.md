@@ -122,11 +122,11 @@ $V^\dagger V = \mathbb{I}$
 This acts non-trivially only on $|110 \rangle$ and $| 111 \rangle$. This means that V is applied to qubit 3 iff qubit 1 and 2 are in $|1 \rangle$.
 This Toffoli-type 3 qubit gates (n qubit gates) can be built from CNOT-gates and controlled-U gates only with $V^2=U$:
 
-![[Pasted image 20250722152918.png]]
+![[Images/Pasted image 20250722152918.png]]
 
 And 2-qubit [[Controlled-U Gate]] operations can be built from CNOTs and suitable chosen single-qubit operations A,B,C for which $ABC=\mathbb{I}$ and $AXBXC=U$ holds
 
-![[Pasted image 20250722153750.png]]
+![[Images/Pasted image 20250722153750.png]]
 
 Every $U \in SU(2)$ (Group of $2 \times 2$ unitaries with determinant 1) can be written as $U=R_x(\alpha)R_y(\beta)R_z(\gamma)$ and or those the one-qubit unitaries would be
 
@@ -137,7 +137,7 @@ $C=R_x\left(\frac{\gamma - \alpha}{2}\right)$
 A general unitary V can be written as $e^{i \varphi} U$ where $U$ has determinant 1 and $e^{i \varphi}$ is a phase this can be achieved by using a Phase gate after the control qubit 
 Example [[Hadamard-Gate]] from iH Gate which can be realized through rotations
 
-![[Pasted image 20250722160138.png]]
+![[Images/Pasted image 20250722160138.png]]
 Example 2)
 
 $$
@@ -171,18 +171,18 @@ Choose the last configuration and construct the unitary as such that it acts on 
 
 With the following notation:
 
-![[Pasted image 20250723101736.png|300]]
+![[Images/Pasted image 20250723101736.png|300]]
 
 We get the following circuit for our grey code:
 
-![[Pasted image 20250723103124.png]]
+![[Images/Pasted image 20250723103124.png]]
 
 To realize $C^n(U)$ controlled-U operations in an efficient way, where one qubit undergoes U if n others are all in $|1\rangle$ like in this picture:
 
-![[Pasted image 20250723103523.png|200]]
+![[Images/Pasted image 20250723103523.png|200]]
 
 One can use [[Toffoli Gate|Toffolis]] to concatenate the control qubits to [[Ancilla|Ancillas]]:
-![[Pasted image 20250723110031.png]]
+![[Images/Pasted image 20250723110031.png]]
 
 Resource Count:
 - For one 2-level unitary $(d=2^n)$ we need at most $2(n-1)$ controlled operations $C^{n-1}(X)$ to implement the swap of basis states according to the Grey Code, i. e. $O(n)$ of these operations
@@ -193,13 +193,13 @@ Resource Count:
 3. Arbitrary single-qubit rotations can be approximated by a finite set of single-qubit gates (e.g. [[T-Gate]] and [[Hadamard-Gate]])
 A concatenation of Rotations is another [[Rotation Gates|Rotation]] with an angle of an **irrational** multiple of $\pi$ in the Bloch sphere. Example:
 $$
-\begin{align*}
+\begin{align}
 R_z(\pi/4)R_x(\pi/4) &= e^{-i\frac{\pi}{8}Z}e^{-\frac{\pi}{8}X} \\ 
 &=(\cos\frac{\pi}{8}\mathbb{I}-i \sin{\frac{\pi}{8}}Z)(\cos\frac{\pi}{8}\mathbb{I}-i \sin{\frac{\pi}{8}}X) \\
 &=\cos^2{\frac{\pi}{8}}\mathbb{I}-i \cos{\frac{\pi}{8}}\sin{\frac{\pi}{8}}X-i\sin{\frac{\pi}{8}}\cos{\frac{\pi}{8}}Z-\sin^2{\frac{\pi}{8}}ZX \\
 &=\cos^2{\frac{\pi}{8}}\mathbb{I}-i \sin{\frac{\pi}{8}}(\cos{\frac{\pi}{8}}(X+Z)+\sin{\frac{\pi}{8}Y}) \\
 &= \cos{\frac{\theta}{2}}\mathbb{I}-i \sin{\frac{\theta}{2}}(\vec{n} \cdot \vec{\sigma}) = R_\vec{n}(\theta)
-\end{align*}
+\end{align}
 $$
 With $\vec{n}=(\cos\frac{\pi}{8},\sin\frac{\pi}{8},\cos\frac{\pi}{8})$ 
 $\cos\frac{\theta}{2}=\cos^2\frac{\pi}{8}$ is a transcendental equation, this means that $\theta$ is an irrational multiple of $\pi$. That is why we never revisit the same point on the circle!

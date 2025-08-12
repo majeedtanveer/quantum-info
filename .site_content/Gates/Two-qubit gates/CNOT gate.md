@@ -6,7 +6,7 @@ The CNOT gate (or Controlled-NOT gate) is two-qubit operation, where the first q
 	- $\ket{a,b} \overset{CNOT}\longrightarrow \ket{a,b \oplus a}$
 
 $CNOT = \begin{pmatrix}  1 & 0 & 0 & 0 \\  0 & 1 & 0 & 0 \\  0 & 0 & 0 & 1 \\  0 & 0 & 1 & 0 \end{pmatrix}$
-![[Pasted image 20250723104636.png|300]]
+![[Images/Pasted image 20250723104636.png|300]]
 
 ## Qiskit
 

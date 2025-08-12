@@ -13,7 +13,7 @@ Assumptions: We have black boxes that prepare $| u \rangle$ and peform controlle
 	- The second register begins in $|u\rangle$, containing as many qubits as are necessary to store $|u\rangle$
 - First we create an unbiased superposition by putting [[Hadamard-Gate|H-Gates]] for all $t$ qubits for the first register. Then we do $n$ controlled-$U^{2^j}$ operations on the second register which is controlled by the $j$th qubit on the first register. Consider one qubit of the first register, and $|u\rangle$
 	$$
-	\begin{align*}
+	\begin{align}
 	|0\rangle | u \rangle &\xrightarrow{H}\frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)|u\rangle \\
 	&\xrightarrow{C-U^{2^j}} \frac{1}{\sqrt{2}}(|0\rangle|u\rangle + |1\rangle U^{2^j} |u\rangle \\
 	&= \frac{1}{\sqrt{2}}\left(|0\rangle + e^{2 \pi i \left(2^j \varphi\right)} |1\rangle\right)|u\rangle \\
@@ -21,7 +21,7 @@ Assumptions: We have black boxes that prepare $| u \rangle$ and peform controlle
 	&\frac{1}{\sqrt{2^t}} \sum_{k=0}^{2^t-1} e^{2 \pi i \varphi k} |k\rangle |u\rangle\\
 	&=\frac{1}{\sqrt{2^t}}\left(|0\rangle + e^{2 \pi i 0.\varphi_t} |1\rangle\right)\left(|0\rangle + e^{2 \pi i 0.\varphi_{t-1}\varphi_{t}} |1\rangle\right)\left(|0\rangle + e^{2 \pi i 0.\varphi_{t_1}…\varphi_{t}} |1\rangle\right) |u\rangle \\
 	&\xrightarrow{\text{FT}^\dagger} |\varphi \rangle|u\rangle = |\varphi_1\rangle |\varphi_2\rangle…|\varphi_t\rangle |u\rangle
-	\end{align*}
+	\end{align}
 	$$
 All computational basis states are encoded in binary representation $|k\rangle$. Example: so the output state for t=4 k=3 is $\frac{1}{4}|0\rangle|0\rangle e^{2 \pi i \left(2^1 \varphi\right)}|1\rangle e^{2 \pi i \left(2^0 \varphi\right)}|1\rangle=\frac{1}{4}|0\rangle|0\rangle|1\rangle|1\rangle e^{2 \pi i \varphi\cdot3}=\frac{1}{4}|3\rangle e^{2 \pi i \varphi\cdot3}$. The measurement of the qubits on the first register provides us $\varphi$ exactly.
 #### Algorithm steps summary

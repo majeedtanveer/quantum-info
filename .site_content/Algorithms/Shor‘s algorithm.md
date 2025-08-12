@@ -7,22 +7,22 @@ We can find a factor of $N$ if we find a non-trivial solution of $y^2= 1 \mod N$
 $y=1$ and $y=-1 \equiv (N-1) \mod N$
 However if N is divisible by two distinct odd primes, these are at least two more non-trivial square roots in $\mathbb{Z}^*_N$ (i.e. among the set of numbers between 1 and $N-1$, which are coprime with N):
 $$
-\begin{align*}
+\begin{align}
 &y^2-1= (y+1)(y-1)= 0 \mod N \\
 &\rightarrow (y+1)(y-1)= k \cdot N \quad \text{for some k}
-\end{align*}
+\end{align}
 $$
 If $y \neq \pm 1 \mod N$, then neither $y+1$ nor $y-1$ is a multiple of $N$.
 $\Rightarrow$ In that case, the greatest common divisors $\gcd(y+1,N)$ and $\gcd(y-1,N)$ must each be proper divisors of $N$, i.e. prime factors we are looking for.
 How can we find a non-trivial square root $y$?
 $\Rightarrow$ Choose a random integer $x$, $1 < x \leq N-1$, check whether $x$ is coprime of $N$. If it‘s not coprime, $N$ and $x$ share a prime factor, which we can easily find and we are done. If $x$ is coprime $x$ of $N$, then run the [[Quantum Order Finding]] algorithm to find $r$:
 $$
-\begin{align*}
+\begin{align}
 & \quad \quad x^r= 1 \mod N \\
 &\Leftrightarrow (x^{r/2})^2 = 1 \mod N\\
 &\Leftrightarrow (x^{r/2}+1)(x^{r/2}-1) = 0 \mod N\\
 &\Leftrightarrow (x^{r/2}+1)(x^{r/2}-1) = k \cdot N \quad \text{for some k}
-\end{align*}
+\end{align}
 $$
 In other words if we are lucky and the order $r$ is even, then $y=x^{r/2}$ is a square root of 1.
 We know for sure that $x^{r/2} \neq 1 \mod N$, since $r$ is the smallest integer for which this is true. If we are again lucky and $x^{r/2} \neq -1 \mod N$ too, then $x^{r/2}$ is a **non-trivial** root.

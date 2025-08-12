@@ -1,13 +1,13 @@
 It is a $[[9,1,1]]$ code based on the concatenation of the 3-qubit repetition code in the [[Z Gate|Z-]] and [[X Gate|X-Basis]]:
-![[Pasted image 20250811180916.png]]
+![[Images/Pasted image 20250811180916.png]]
 Explicit form of logical state:
 
 $$
-\begin{align*}
+\begin{align}
 |\psi\rangle_L &=\alpha(|000\rangle+|111\rangle)(|000\rangle+|111\rangle)(|000\rangle+|111\rangle)/\sqrt{8} \\
 &+ \beta(|000\rangle-|111\rangle)(|000\rangle-|111\rangle)(|000\rangle-|111\rangle)/\sqrt{8} \\
 &= \alpha|0\rangle_L+\beta|1\rangle_L
-\end{align*}
+\end{align}
 $$
 
 - Bit flip errors $X_i$ are corrected by measuring $Z$-stabilizers: $\{Z_1Z_2,Z_2Z_3,Z_4Z_5,Z_5Z_6,Z_7Z_8,Z_8Z_9\}$

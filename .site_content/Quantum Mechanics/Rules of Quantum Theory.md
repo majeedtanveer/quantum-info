@@ -8,7 +8,7 @@
 |   Open | Different    | Operators | Directly                   | Generally non-pure | General    | Some             |
 In quantum theory switching between systems is always possible.through purifying and coarse graining respectively.
 
-![[Pasted image 20250729131634.png]]
+![[Images/Pasted image 20250729131634.png]]
 
 Open quantum systems are obtained from closed quantum systems by discarding information.
 
@@ -23,11 +23,11 @@ Boxes in time (in series) are connected by single wires (same lab frame) and box
 #### Experiment
 A complete process involving the composition of quantum events that produce outcomes across multiple spatially separated laboratories, where each lab is accessible to agents who can communicate and condition or control their future choice of quantum operations or measurement devices based on prior information.
 $\Rightarrow$ Devices (or events they produce) are distinguished by their number of input and output quantum systems
-![[Pasted image 20250729130522.png]]
+![[Images/Pasted image 20250729130522.png]]
 #### Event
 An **event** is a specific outcome resulting from one use of a device (like a measurement or operation), chosen among several possible alternatives, and fully described in terms of what happened in the lab during that operation. Preparations are also called states collected into ensembles, are also called Effects collected into positive-operator-valued-measures, POVMs)
 
-![[Pasted image 20250729132150.png]]
+![[Images/Pasted image 20250729132150.png]]
 
 ### General
 Quantum Theory is operationally defined by assigning mathematical objects $m$ to the systems Operational Quantity $Q$ by a set rules ($Q=m$) together with a rule to compute probabilities in the lab frame directly from these objects $p_m=f(m)$.
@@ -39,23 +39,23 @@ These concepts are all effected by coarse graining.
 
 #### Probabilistic $\leftrightarrow$ Deterministic
 The devices are distinguished by the number of possible set of events (outcomes) that they produce in the lab. A deterministic device only produces **one** event (thus $\Downarrow$ is omitted) while a probabilistic device have at least **two** possible events (thus $\Downarrow$ is needed to specify). The deterministic device is not providing new information to the system. Those devices are indicated by a hat (e.g. $\hat{\psi}$)
-![[Pasted image 20250729135334.png]]
+![[Images/Pasted image 20250729135334.png]]
 
 **Coarse Graining** (denoted by the „garbage bin“ at the end of the double arrow) over all possible events of a probabilistic device produces (or simulates) a deterministic device. The coarse grained device generates the probabilities of the probabilistic device summed over the discarded outcomes. Discarding a system means discarding all outcomes  of any observation test performed on it
-![[Pasted image 20250729140112.png]]
+![[Images/Pasted image 20250729140112.png]]
 
 #### Conditioning of choices
 Agents in the lab frame can choose which devices to use in a circuit during a experiment. Once a possible outcome has been chosen and run it collapses into that path. Conditioned choices are noted by an up arrow $\Uparrow$ and a conditioning bar $|$ for probabilistic devices. For deterministic devices the conditioning bar is not necessary and only the device label is noted.
-![[Pasted image 20250729140952.png]]
+![[Images/Pasted image 20250729140952.png]]
 
 Outcomes produced probabilistically can be used to condition other devices, this is a simulation of a new device which jointly produces all the outcomes.
-![[Pasted image 20250729141731.png]]
+![[Images/Pasted image 20250729141731.png]]
 
 #### Pure events/devices
 A pure event is an elementary event which has no underlying non-trivial probabilistic explanation. A pure event can not be simulated non-trivially. The purity of devices is the only operational assumption distinguishing the closed and open system quantum rules. Thus for pure events we use the notation for closed systems in the open system picture to indicate that. All pure events are Rank 1 projectors ($P=P^\dagger, P=P^2$ or Number of non-zero eigenvalues=1). Operators can only describe **pure** transformations!
 E.g. for preparation (This is similar for transformations and observations): $\sum_{x’}\rho’_{Ax’,x}=\sum_{x’}p_{x’|x}\psi_{Ax’}=\psi_{Ax}$  
 
-![[Pasted image 20250729150634.png]]
+![[Images/Pasted image 20250729150634.png]]
 
 Example:
 	$\psi_x=|0\rangle \langle 0 |$ can not be written as a probabilistic composition other than itself ($\sum_{x’=0}p_{x’|x}\psi_{x} =1 \cdot |0\rangle \langle 0 |=\psi_x$) and has a rank of 1 and is thus pure but $\rho’_x=\frac{1}{2}(|0\rangle \langle 0 |+|1\rangle \langle 1 |)$ can be written as a probabilistic composition of other preparations ($\sum_{x’=0,1}p_{x’|x}\rho_{x} =\frac{1}{2} \cdot |0\rangle \langle 0 | + \frac{1}{2} \cdot |1\rangle \langle 1 | =\rho’_x$) and is thus non-pure. The rank is also 2.
@@ -66,7 +66,7 @@ $\sum_{x’}\rho_{Ax|x’}p_{x’}=\rho_{Ax}$
 Example:
 - $\sum_{x=0,1}\rho_{Ax|x’}p_{x’} =\frac{1}{2} \cdot |0\rangle \langle 0 | + \frac{1}{2} \cdot |1\rangle \langle 1 | =\rho_x$ is a mixed preperation. And as shown before on-pure.
 - $\mathbb{I}=|0\rangle \langle 0 | + |1\rangle \langle 1 |$ is not mixed because 1+1=2. This is also non-pure because the rank is 2. Thus this observation is neither pure nor mixed.
-![[Pasted image 20250730173216.png]]
+![[Images/Pasted image 20250730173216.png]]
 ### Causality
 
 | **Open Systems**   | Any event can be non-pure                                                         |                                                                         |                                                               |
@@ -102,7 +102,7 @@ $\langle \bar{\pi}_{Ax} | = \langle \psi_{Ax} | \sqrt{\frac{1}{\hat{\rho}_A}}=\l
 With $\hat{\rho}_{A}=\sum_x|\psi_{Ax}\rangle\langle\psi_{Ax}|$ assumed invertible
 $|\bar{\psi}_{Ay} \rangle = \sqrt{\hat{\rho}_A} | \pi_{Ay} \rangle = \left(\langle \pi_{Ay} | \sqrt{\hat{\rho}_A} \right)^\dagger \Rightarrow \sum_y \langle \bar{\psi}_{Ay} | \bar{\psi}_{Ay}\rangle =\sum_y \langle \pi_{Ay} |\hat{\rho}_A|\pi_{Ay}\rangle=\mathrm{tr}_A(\hat{\rho}_A)=1$
 $\Rightarrow a_{yx}=\langle\pi_{Ay}|\psi_{Ax}\rangle=\langle\bar{\psi}_{Ay}|\bar{\pi}_{Ax}\rangle=(\langle\bar{\pi}_{Ax}|\bar{\psi}_{Ay}\rangle)^*=(\bar{a}_{xy})^*$
-![[Pasted image 20250804144140.png]]
+![[Images/Pasted image 20250804144140.png]]
 
 #### Perfect Distinguishability
 Perfectly distingushable preparations and observations are the **only ones** equal to their adjoint pretty good construction. So preparations and observations seem only the same if one assumes perfect distinguishability

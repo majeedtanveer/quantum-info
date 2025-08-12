@@ -39,10 +39,10 @@ $\Rightarrow$ A classical algorithm requires in general $\frac{N}{2} + 1$ evalua
 	- So the action of the phase [[Oracle]] is $|i \rangle \rightarrow (-1)^{x_i} | i \rangle$ which does nothing if $x_i=0$ and adds a phase if $x_i=1$, the oracle can be thus noted as $O_{x,\pm}$
 - Now we reapply [[Hadamard-Gate|H-Gates]] and get the following in total:
 $$
-\begin{align*}
+\begin{align}
 H^{\otimes n}O_{x,\pm} \frac{1}{\sqrt{2^n}} \sum_{i \in \{0,1\}^n} |i \rangle &= H^{\otimes n}\frac{1}{\sqrt{2^n}} \sum_{i \in \{0,1\}^n} (-1)^{x_i}|i \rangle \\
 &=\frac{1}{2^n} \sum_{i \in \{0,1\}^n} (-1)^{x_i} \sum_{j \in \{0,1\}^n} (-1)^{i \cdot j} | j \rangle \\
-\end{align*}
+\end{align}
 $$
 For $x$ is constant, our state is $|0\rangle^{\otimes n}$ if all $x_i=0$ and $-|0\rangle^{\otimes n}$ if  all $x_i=1$ because this is the only $|j \rangle$ that survives. So if we measure this state we know for certainty that we have a constant function. If we measure a different state we know for certainty that we have a balanced function. We have again a global phase which is inaccessible which is important!
 
