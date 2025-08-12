@@ -5,7 +5,7 @@
 site_name: Majeed's Quantum Information Notes
 site_url: https://majeedtanveer.github.io/quantum-info
 site_author: Majeed Tanveer
-site_description: My Quantum Info Notes for the 
+site_description: My Quantum Info Notes for the RWTH lecture
 
 # Source directory (where your markdown files are)
 docs_dir: .site_content
@@ -40,4 +40,8 @@ theme:
         icon: material/weather-sunny
         name: Switch to light mode
 
-markdown_extensions: [mathjax]
+extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+markdown_extensions:
+    - mdx_math
