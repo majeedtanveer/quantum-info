@@ -11,7 +11,7 @@ site_description: My Quantum Info Notes for the RWTH lecture
 docs_dir: .site_content
 
 theme:
-  name: material
+  name: material 
   features:
     - navigation.tabs
     - navigation.sections
@@ -22,7 +22,7 @@ theme:
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
-    - content.math  # enables MathJax math
+
   palette:
     # Light mode
     - media: "(prefers-color-scheme: light)"

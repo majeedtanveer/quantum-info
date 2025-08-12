@@ -4,6 +4,13 @@ $\Rightarrow$ Encode $k=1$ logical qubit:
 Basis states or **codewords** $|0\rangle_L=|000\rangle, |1\rangle_L=|111\rangle$ span the **codespace**, a subspace of the Hilbert space, in which arbitrary logical superpositions live:
 $|\psi\rangle_L=\alpha|0\rangle_L+|1\rangle_L=\alpha|000\rangle + \beta|111\rangle$
 
+$$
+    \begin{equation}
+        f(t) = \mu_1 f_1(t) + \mu_2 f_2(t).
+    \end{equation}
+$$
+
+
 ### Algorithm Steps
 1. Encoding: quantum circuit $U_\text{enc}: |\psi\rangle\rightarrow|\psi\rangle_L$
 	Use two [[Ancilla]] qubits initialized in $|0\rangle$:
