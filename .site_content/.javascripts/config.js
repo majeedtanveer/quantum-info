@@ -1,7 +1,7 @@
 window.MathJax = {
     tex: {
-      inlineMath: [ ["\\(","\\)"], ['$', '$'] ],
-      displayMath: [ ["\\[","\\]"], ['$$', '$$'] ],
+      inlineMath: [ ['$', '$'] ],
+      displayMath: [ ['$$', '$$'] ],
       tags: 'ams'
     },
     options: {
