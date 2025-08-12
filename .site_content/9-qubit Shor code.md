@@ -1,4 +1,4 @@
-It is a $[[9,1,1]]$ code based on the concatenation of the 3-qubit repetition code in the [[Z Gate|Z-]] and [[X Gate|X-Basis]]:
+It is a $[\left[9,1,1]\right]$ code based on the concatenation of the 3-qubit repetition code in the [[Z Gate|Z-]] and [[X Gate|X-Basis]]:
 ![[Images/Pasted image 20250811180916.png]]
 Explicit form of logical state:
 
