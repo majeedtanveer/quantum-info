@@ -62,8 +62,8 @@
 - What are codes and why one needs it?
 - states losing coherence $\Rightarrow$ toric code
 	- stabilizer circuit
-- Explain Steane Code $[[7,1,3]]$ with logical operators + sketch non disturbing measurement
-- 9 qubit code $[[9,1,3]]$
+- Explain Steane Code $[\left[7,1,3]\right]$ with logical operators + sketch non disturbing measurement
+- 9 qubit code $[\left[9,1,3]\right]$
 	- how many logical qubit
 	- how many error corrected
 	- stabilizers
@@ -232,8 +232,8 @@
 ## Advanced Topics
 - **Quantum error correction**
   - Why codes are needed (coherence loss)
-  - Stabilizer circuits, Steane Code $[[7,1,3]]$
-  - 9-qubit code $[[9,1,3]]$
+  - Stabilizer circuits, Steane Code $[\left[7,1,3]\right]$
+  - 9-qubit code $[\left[9,1,3]\right]$
     - Logical qubits, error correction, stabilizers
     - Error propagation, indirect measurement, fault tolerance, error weight
   - Color code (Steane)

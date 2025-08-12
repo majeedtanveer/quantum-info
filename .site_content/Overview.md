@@ -172,7 +172,7 @@ However, we will see time and again that the mathematics naturally follows from 
 
 **BLOCK 3**
 
-10.2 Quantum Error Correction (QEC) with a 7-Qubit Steane Code (How $[[7,1,3]]$ works and constructing other logical gates (e.g. $H_L$))
+10.2 Quantum Error Correction (QEC) with a 7-Qubit Steane Code (How $[\left[7,1,3]\right]$ works and constructing other logical gates (e.g. $H_L$))
 
 11.1 Quantum error correction of qubit loss (How it works and implementation)
 
