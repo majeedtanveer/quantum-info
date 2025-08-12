@@ -10,11 +10,16 @@ site_description: A description of your site
 # Source directory (where your markdown files are)
 docs_dir: .site_content
 
-markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
-
-# Add MathJax For LaTeX
-extra_javascript:
-  - .javascripts/mathjax.js
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - content.math
