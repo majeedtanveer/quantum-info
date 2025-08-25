@@ -1,12 +1,13 @@
 # This is the CD file I use to deploy my notes site
 # Like a normal GH Action you will place this in `.github/workflows` to use
 
-name: Build and Deploy MkDocs Site
-
+name: Deploy MkDocs to GitHub Pages
+env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 on:
   push:
     branches:
-      - main
+      - main      
       - develop
 
 jobs:
@@ -67,7 +68,13 @@ jobs:
           find .site_content/ -type f -name "*.md" -exec sed -i 's/\[\[\(.*\)\]\]/[\1](\1.md)/g' {} \;
           echo "Preprocessed Obsidian features in markdown files."
 
-      # Step 6: Build and Deploy MkDocs Site
-      - name: Deploy MkDocs to GitHub Pages
+      # Step 6: Configure GitHub credentials
+      - name: Configure GitHub credentials
         run: |
-          mkdocs gh-deploy --force --config-file mkdocs.yml
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}
+
+      # Step 7: Build and Deploy MkDocs Site
+      - name: Deploy MkDocs to GitHub Pages
+        run: mkdocs gh-deploy --force --config-file mkdocs.yml
