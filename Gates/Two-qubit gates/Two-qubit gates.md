@@ -1,0 +1,1 @@
+A two qubit gate is a Unitary U acting on 2 qubits.

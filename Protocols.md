@@ -1,0 +1,286 @@
+## Prof Müller
+### Basic topics
+- entangled state example bell state
+- how to construct $\frac{1}{\sqrt{2}}(|000\rangle+|111\rangle)$
+- how would one create an entangled state $\frac{1}{\sqrt{2}}(|000\rangle+|111\rangle)$
+- QPE
+- No-cloning Theorem and Proof
+- how to construct $\frac{1}{\sqrt{2}}(|000\rangle+e^{i \frac{\pi}{4}}|111\rangle)$
+- Name a universal gate set
+- How many gates are needed to construct n-qubit unitary
+	- $O(n^24^n)$
+- what is a rotation gate
+	- show on bloch sphere
+	- enough to get  to arbitrary rotations?
+	- enough for universality?
+- is $|+0\rangle+|-1\rangle$ entangled?
+	- yes
+	- draw circuit
+- is CNOT, H universal? how to make it universal?
+- given arbitrary U is it efficient to decompose into CNOT H T, complexity?
+- classical computing
+	- nand
+	- toffoli
+- quantum
+	- cnot toffoli
+- universality
+	- universal set
+	- produce X from T  H CNOT
+- reversible vs irreversible
+- classical & quantum computing
+	- why nand impossible in quantum 
+	- examples for reversible
+	- CNOT from toffoli
+- can you entangle with swap gate? why?
+### Intermediate topics
+- Grover Algorithm circuit + explain oracle $\Rightarrow$ how the speedup are (if one does not now calculate)
+- Hammin bound formula
+- order finding
+- Draw order finding circuit
+	- given some numbers what is the order
+	- how to factor a number using r
+- Bernstein Vazirani
+	- circuit
+	- compare classic/quantum oracle
+- NP hard problems
+	- how to speed up?
+		- Grover
+		- geometric picture what is the probability after k steps
+- Deutsch Josza 
+	- explain objective problem
+	- oracle
+	- circuit
+	- how to measure (projective measurement)
+-  Vazirani
+	- Scaling quantum vs classical
+- QFT
+	- 1 qubit
+	- 2 qubit
+	- n qubit gate count definition of R_n
+- QPE
+### Advanced topics
+- What are codes and why one needs it?
+- states losing coherence $\Rightarrow$ toric code
+	- stabilizer circuit
+- Explain Steane Code $[[7,1,3]]$ with logical operators + sketch non disturbing measurement
+- 9 qubit code $[[9,1,3]]$
+	- how many logical qubit
+	- how many error corrected
+	- stabilizers
+	- what happens iff certain error happens
+	- how to correct error
+	- how to measure indirectly
+	- is circuit fault tolerant?
+	- what is the weight of the error
+- Color Code (Steane)
+- distance 3 surface code
+	- stabilizers
+	- how to measure
+	- error propagation, show uncorrectable error
+- Stabilizer codes
+	- minimum qubits for 1 logical 1 arbitrary error
+	- 5 qubits
+	- write down stabilizers for that
+- Quantum hamming bond
+- error propagation
+- order finding
+	- shor circuit
+	- derive factors
+- Color code
+- toric code
+- 3 qubit code p_corr graph
+	- how to decrease
+		- concatatenation
+		- how much improvement
+## Prof Wegwejis
+- General stuff/ less about formulas, writes complex formulas himself and lets you explain them
+- We use the notation now:
+	- observation test (instead of POVM)
+	- effect/observation (instead of effect operator)
+	- transformations (instad of kraus operators/ canonical coarse graining form)
+		- pure transformation is one kraus operator
+	- Correspondence between superoperators and bipartite operators (instead of Choi-Jamiolkowski)
+	- Deterministic preparation= Normalized state  
+	- Probabilistic preparation test =Sub-normalized states collected into an ensemble
+	- Probabilistic observation test = Effects collected into a positive-operator-valued-measure (POVM), destructive measurement
+	- Deterministic transformation = Channel or evolution 
+	- Probabilistic transformation test = Operations collected into an instrument, measurement, transformation-valued measure
+### Basic topics
+- POVM Effect operator identity+ Pretty good Operator
+- Effect operators and POVM and how they relate to each other
+	- effectors do not give the state after measurement and how to compute the probability.
+	- constraints (semipositivity, sum to unitary)
+- construct a Pretty good measurement from 3 point in the blochsphere
+- how to prepare an ensemble
+- how to calculate probability in open system
+- what are requirements on transformatioin (CP preserving)
+	- show that it is cp preserving
+- do a canonicial form  of $\psi_{AB}$
+	- use steering to get canonical A-basis
+- open systems definition
+- what does transformkation do to a state
+- represent pure state in canonical basis
+- dreive kraus oeprators from circuits and example
+- constraints of transformation test
+-  open systems experiment definition#
+- transformation conditions
+	- $T^\dagger T\leq\mathbb{I}$
+- does isometric transformation increase/decrease dimension of system
+- closed system definition
+- 
+### Intermediate topics
+- Quantum Channel 1/2(X * X + Z * Z) apply on blochsphere representation => calculation
+- Distinguishing non-orthogonal states
+	- prove, that measurement operators can not perfectly distinguish non-orthogonal states
+- steering
+	- explain
+	- what about commincation
+	- causality
+- steering
+- steering
+- how to define transfomation
+	- properties 
+		- subunit trace preserving
+	- completely positive or enough when only positive?
+		- completely positive
+- marginal operators?
+- definition entanglement processing
+	- 4 rules
+- what is entanglement dimension in bipartite system
+- definition entanglement processing
+	- 4 rules
+- how to simulate remote transformation by local transformation? show
+- canonical form of observations and states
+### Advanced topics
+- no information without disturbance
+- Information = Disturbance:
+	- What does this mean
+	- writes down formula, show what the objects are (Measurement and Superoperator)
+	- "No disturbance without communication"
+	- "No disturbance means no information"
+- Deriving Measurement Operators from Evolution and Choi-Jamiolkowski
+- Explain entanglement supping
+	- Explain
+	- what is $p_\psi$
+	- upper limit (1/$d^2$)
+	- show that $p_\psi < 1/d^2$
+		- Cauchy Schwartz use $\sum_n \lambda_n=1$
+- write down maximally entangled state
+- swap operation
+	- trafo not valid
+- entanglement swapping
+	- circuit
+	- write down teleportation
+- Information = Disturbance
+- information=disturbance
+- what is a non informative transf test
+	- what are proportion?
+	- $||T_{AB}|\psi_A\rangle\langle\psi_A|T_{AB}^\dagger=|\psi_A\rangle\langle\psi_A|$
+- information=disturbance
+- bob and alice quantum teleportation
+- signalling without communication
+
+# Summarized version from ChatGPT
+
+# Prof. Müller
+
+## Basic Topics
+- **Entangled states**
+  - Example: Bell state
+  - Is $|+0\rangle + |-1\rangle$ entangled? (Yes, draw circuit)
+- **Constructing entangled states**
+  - $\frac{1}{\sqrt{2}} (|000\rangle + |111\rangle)$
+  - $\frac{1}{\sqrt{2}} (|000\rangle + e^{i\pi/4} |111\rangle)$
+- **Quantum gates and universality**
+  - Name a universal gate set
+  - Is CNOT + H universal? How to make it universal
+  - Gates needed for an n-qubit unitary: $O(n^2 4^n)$
+  - Arbitrary $U$ decomposition into CNOT, H, T
+- **Rotation gates**
+  - Bloch sphere representation
+  - Arbitrary rotations and universality
+- **Classical vs quantum computing**
+  - NAND, Toffoli, CNOT
+  - Reversible vs irreversible
+  - Why NAND impossible in quantum
+  - Examples of reversible operations
+  - Can you entangle with SWAP? Why?
+- **No-cloning theorem**
+  - Proof
+- **Quantum Phase Estimation (QPE)**
+
+## Intermediate Topics
+- **Grover’s algorithm**
+  - Circuit and oracle
+  - Speedup explanation (geometric probability)
+- **Hamming bound formula**
+- **Order finding**
+  - Circuit
+  - How to factor using the order $r$
+- **Bernstein-Vazirani**
+  - Circuit and comparison with classical oracle
+- **Deutsch-Jozsa**
+  - Objective/problem, oracle, circuit
+  - Measurement (projective)
+- **NP-hard problems**
+  - Grover speedup
+- **Quantum Fourier Transform (QFT)**
+  - 1, 2, n-qubit versions
+  - Gate counts
+  - Definition of $R_n$
+
+## Advanced Topics
+- **Quantum error correction**
+  - Why codes are needed (coherence loss)
+  - Stabilizer circuits, Steane Code $[[7,1,3]]$
+  - 9-qubit code $[[9,1,3]]$
+    - Logical qubits, error correction, stabilizers
+    - Error propagation, indirect measurement, fault tolerance, error weight
+  - Color code (Steane)
+  - Distance-3 surface code
+  - 3-qubit code, concatenation, error probability improvement
+  - Minimum qubits for 1 logical qubit correcting arbitrary error (5-qubit code)
+- **Shor’s algorithm**
+  - Order finding, circuit, factor derivation
+
+---
+
+# Prof. Wegwejis
+
+## Basic Topics
+- **Notation**
+  - Observation test (POVM)
+  - Effect/effect operator
+  - Transformation (instead of Kraus operator)
+  - Deterministic vs probabilistic preparation and observation
+- **POVM & effect operators**
+  - Constraints: semipositivity, sum to identity
+  - Pretty Good Measurement (PGM) example with 3 Bloch points
+- **State preparation and ensembles**
+- **Open systems**
+  - Definition, pure vs mixed states, canonical basis
+  - Transformation effects on states, Kraus operators from circuits
+  - Conditions: $T^\dagger T \le I$, CP-preserving
+- **Isometric transformations**
+  - System dimension
+
+## Intermediate Topics
+- **Quantum channels**
+  - Example: $\frac{1}{2} (X \cdot X + Z \cdot Z)$ on Bloch sphere
+- Distinguishing non-orthogonal states (impossibility proof)
+- **Steering**
+  - Communication, causality
+  - Simulating remote transformation via local operations
+- Canonical form of states and observations
+- **Entanglement processing**
+  - Definition, rules, entanglement dimension
+
+## Advanced Topics
+- **No information without disturbance**
+  - Meaning, formulas (measurement and superoperator)
+  - Teleportation, entanglement swapping circuits
+- Non-informative transformation tests
+- **Entanglement swapping probabilities**
+  - Upper limit $1/d^2$, proof using Cauchy-Schwarz
+- Maximally entangled states
+

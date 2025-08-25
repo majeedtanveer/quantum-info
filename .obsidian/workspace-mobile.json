@@ -1,0 +1,218 @@
+{
+  "main": {
+    "id": "4ab4bc7737a66514",
+    "type": "split",
+    "children": [
+      {
+        "id": "b66f6fc4fc02f2ba",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c351c926a990b830",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Quantum Hamming Bound.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Quantum Hamming Bound"
+            }
+          },
+          {
+            "id": "e7575a0f8dadbf18",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Steane Code.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Steane Code"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0546be47141d931b",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "176d397f900d7001",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": true
+          },
+          "icon": "lucide-folder-closed",
+          "title": "Files"
+        }
+      },
+      {
+        "id": "aff53027c0f51ea2",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          },
+          "icon": "lucide-search",
+          "title": "Search"
+        }
+      },
+      {
+        "id": "ddceb9149e5888ab",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-tags",
+          "title": "Tags"
+        }
+      },
+      {
+        "id": "af62285c0afd075c",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {},
+          "icon": "lucide-bookmark",
+          "title": "Bookmarks"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "2f493a69d4029872",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "06c1b3b3c6abc676",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "Algorithms/Grover.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-coming-in",
+          "title": "Backlinks"
+        }
+      },
+      {
+        "id": "4511ca4b7657f674",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "Oracle.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-going-out",
+          "title": "Outgoing links"
+        }
+      },
+      {
+        "id": "5196a1638a69e1ee",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "Oracle.md",
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-list",
+          "title": "Outline"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "e7575a0f8dadbf18",
+  "lastOpenFiles": [
+    "Quantum Error Correction.md",
+    "Steane Code.md",
+    "Quantum Hamming Bound.md",
+    "Surface Code.md",
+    "distance.md",
+    "Images/Pasted image 20250825140846.jpg",
+    "Images/Pasted image 20250825140534.jpg",
+    "Quantum Threshold Theorem.md",
+    "Route to large-scale fault tolerant quantum computing.canvas",
+    "Quantum Information.zip",
+    "Images/Pasted image 20250823125659.jpg",
+    "Images/Pasted image 20250823124916.jpg",
+    "Kitaev‘s toric code.md",
+    "Protocols.md",
+    "Overview.md",
+    "Algorithms/Grover.md",
+    "Algorithms/Deutsch-Josza.md",
+    "Gates/Single-qubit gates/Hadamard-Gate.md",
+    "Algorithms/Deutsch.md",
+    "Quantum Mechanics/Rules of Quantum Theory.md",
+    "3-qubit code.md",
+    "9-qubit Shor code.md",
+    "Algorithms/Quantum Fourier Transform.md",
+    "Algorithms/Quantum Order Finding.md",
+    "Algorithms/Shor‘s algorithm.md",
+    "Images/Pasted image 20250813172634.jpg",
+    "Images/Pasted image 20250813173558.jpg",
+    "Images/Pasted image 20250813172432.jpg",
+    "Images/Pasted image 20250811180916.png",
+    "Images/Pasted image 20250811163959.png",
+    "Math/Kronecker Delta.md",
+    "Images/Pasted image 20250811154800.jpg",
+    "Quantum Mechanics/Observations on Preperations.md",
+    "indirect measurement.md",
+    "Quantum teleportation.md",
+    "Quantum Mechanics/Quantum Entanglement.md",
+    "Quantum Mechanics/Bloch sphere.md",
+    "Gates/Universality of Quantum Gates.md",
+    "Math",
+    "Efficient Quantum Algorithms.canvas",
+    "Quantum computer abstraction layers.canvas",
+    "Quantum Mechanics",
+    "Images",
+    "Algorithms"
+  ]
+}

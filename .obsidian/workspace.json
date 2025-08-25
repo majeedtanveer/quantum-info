@@ -1,0 +1,312 @@
+{
+  "main": {
+    "id": "cbbf8293525f7284",
+    "type": "split",
+    "children": [
+      {
+        "id": "5b79b30c25720ffa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "baf183e0ad71ae87",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Protocols.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Protocols"
+            }
+          },
+          {
+            "id": "6800d2a643eb3455",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Gates/Single-qubit gates/Rotation Gates/Rotation Gates.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Rotation Gates"
+            }
+          },
+          {
+            "id": "28cbbaa8bfda43da",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Gates/Single-qubit gates/Rotation Gates/Rx Gate.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Rx Gate"
+            }
+          },
+          {
+            "id": "c1e15e4811120848",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Gates/Single-qubit gates/Rotation Gates/Rx Gate.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Rx Gate"
+            }
+          },
+          {
+            "id": "b453d7581bae62c4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Gates/Single-qubit gates/Hadamard-Gate.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Hadamard-Gate"
+            }
+          },
+          {
+            "id": "8a16d288dd4c4f85",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Protocols.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Protocols"
+            }
+          },
+          {
+            "id": "5be35ebb723e956b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "indirect measurement.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "indirect measurement"
+            }
+          },
+          {
+            "id": "36b99f0a9912f4d1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "No-Cloning Theorem.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "No-Cloning Theorem"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2e903b3442d2b89c",
+    "type": "split",
+    "children": [
+      {
+        "id": "f700d878ecdf864d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5e90ace94a4b14b2",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "99a3258954c98155",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "9e197578006248db",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e4dbe2f50e213876",
+    "type": "split",
+    "children": [
+      {
+        "id": "81bf2404f1172bd3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5afad49cdc7ecc22",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Hadamard Gate.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Hadamard Gate"
+            }
+          },
+          {
+            "id": "7cc337eec5a75dac",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Hadamard Gate.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Hadamard Gate"
+            }
+          },
+          {
+            "id": "1cc53345186593b2",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "416c8ce3ef46082b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Hadamard Gate.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Hadamard Gate"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "8a16d288dd4c4f85",
+  "lastOpenFiles": [
+    "Route to large-scale fault tolerant quantum computing.canvas",
+    "Protocols.md",
+    "Algorithms/Quantum Order Finding.md",
+    "Algorithms/Grover.md",
+    "Quantum computer abstraction layers.canvas",
+    "Quantum Hamming Bound.md",
+    "Quantum teleportation.md",
+    "Efficient Quantum Algorithms.canvas",
+    "Computational Complexity.md",
+    "Kitaev‘s toric code.md",
+    "3-qubit code.md",
+    "9-qubit Shor code.md",
+    "Gates/Universality of Quantum Gates.md",
+    "Math/Kronecker Delta.md",
+    "Algorithms/Quantum Fourier Transform.md",
+    "Algorithms/Oracle.md",
+    "indirect measurement.md",
+    "Quantum Error Correction.md",
+    "Gates/Single-qubit gates/Hadamard-Gate.md",
+    "Algorithms/Deutsch-Josza.md",
+    "Algorithms/Deutsch.md",
+    "No-Cloning Theorem.md",
+    "Algorithms/Quantum Phase Estimation.md",
+    "Quantum Mechanics/Quantum Entanglement.md",
+    "Pasted image 20250810181304.png",
+    "Quantum Mechanics/Rules of Quantum Theory.md",
+    "Gates/Clifford Gates.md",
+    "Gates/Gottesmann-Knill theorem.md",
+    "Gates/Single-qubit gates/Rotation Gates/Rx Gate.md",
+    "Images/Bloch sphere.png",
+    "Images/Controlled-U Gate.png",
+    "Images/Deutsch.png",
+    "Gates/Two-qubit gates/CNOT.png",
+    "Gates/Two-qubit gates",
+    "Gates/Single-qubit gates",
+    "Gates/Single-qubit gates/Rotation Gates",
+    "Gates/Single-qubit gates/Pauli Gates",
+    "Gates",
+    "Identities"
+  ]
+}

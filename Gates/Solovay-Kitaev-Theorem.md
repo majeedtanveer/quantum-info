@@ -1,0 +1,1 @@
+A single-qubit $U$ can be approximated to accuracy $\varepsilon$ using $O(\log^2\frac{1}{\varepsilon})$ gates from the discrete gate set. This is a poly-logarithmic increase- **very slow** (in particular not an exponential increase in $1/\varepsilon$).
