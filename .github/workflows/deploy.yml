@@ -1,13 +1,16 @@
-# This is the CD file I use to deploy my notes site
-# Like a normal GH Action you will place this in `.github/workflows` to use
+# Deploy MkDocs to GitHub Pages
+# Place this file in `.github/workflows/deploy.yml`
 
 name: Deploy MkDocs to GitHub Pages
-env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+# Needed so the bot can push to gh-pages
+permissions:
+  contents: write
+
 on:
   push:
     branches:
-      - main      
+      - main
       - develop
 
 jobs:
@@ -40,9 +43,8 @@ jobs:
           mkdir -p .site_content
           # Define excluded folders that should never be published
           EXCLUSION=("Journal" "TODO" "Feelings" "Private" "Templates")
-          
+
           find . -type f -exec grep -l "#publish-me" {} \; | while IFS= read -r file; do
-            # Check if file is in an excluded folder
             SKIP=0
             for folder in "${EXCLUSION[@]}"; do
               if [[ "$file" == *"/$folder/"* ]]; then
@@ -51,14 +53,12 @@ jobs:
                 break
               fi
             done
-            
-            # Only copy if not in excluded folder
             if [ $SKIP -eq 0 ]; then
               cp --parents "$file" .site_content/
             fi
           done
           cp index.md .site_content/ || true
-          cp -r .overrides .site_content/
+          cp -r .overrides .site_content/ || true
           echo "Files containing #publish-me (excluding excluded folders), index.md, and .overrides have been copied to .site_content/"
 
       # Step 5: Preprocess Obsidian Features
@@ -73,7 +73,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
       # Step 7: Build and Deploy MkDocs Site
       - name: Deploy MkDocs to GitHub Pages
