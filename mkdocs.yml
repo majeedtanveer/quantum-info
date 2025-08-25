@@ -1,0 +1,8 @@
+# An example of the most basic config file we can use with `MKDocs`
+# Great place to start to see if this is working / what you need to fix
+# or customize
+
+site_name: Quantum Info
+site_url: https://majeedtanveer.github.io/quantuminfo
+site_author: Majeed Tanveer
+site_description: A collection of notes and resources on quantum information theory
