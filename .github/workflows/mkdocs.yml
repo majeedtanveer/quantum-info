@@ -1,7 +1,8 @@
-# Example of a more complicated config file for `MKDocs`
+# Example of a more complicated config file for `MkDocs`
 # This one takes more action to handle formatting and theming
 
-site_name: Dan's Notes
+site_name: Majeed's Quantum Notes
+
 theme:
   name: material
   features:
@@ -31,19 +32,18 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
-  # Custom color settings
+  # Custom templates and overrides
   custom_dir: .overrides
 
 nav:
- # this will generate the nav dynamically
-  - ... 
-# The index.md file is the home page from the `docs` folder
+  # Automatically generate navigation from the docs directory
+  - ...
 
 markdown_extensions:
   - pymdownx.magiclink:
       repo_url_shorthand: true
-      user: dan1229
-      repo: obsidian-dans-notes
+      user: majeedtanveer          # 👈 your GitHub username
+      repo: quantum-info           # 👈 your repo name
       normalize_issue_symbols: true
   - pymdownx.superfences
   - pymdownx.tasklist:
