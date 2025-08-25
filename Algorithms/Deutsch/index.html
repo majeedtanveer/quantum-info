@@ -1,0 +1,2855 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A description of your site">
+      
+      
+        <meta name="author" content="Majeed Tanveer">
+      
+      
+        <link rel="canonical" href="https://majeedtanveer.github.io/quantum-info/Algorithms/Deutsch/">
+      
+      
+        <link rel="prev" href="../Deutsch-Josza/">
+      
+      
+        <link rel="next" href="../Grover/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Deutsch - Majeed's Quantum Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#setting" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Majeed&#39;s Quantum Notes" class="md-header__button md-logo" aria-label="Majeed's Quantum Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Majeed's Quantum Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Deutsch
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../3-qubit%20code/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  3 qubit code
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../9-qubit%20Shor%20code/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  9 qubit Shor code
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Computational%20Complexity/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Computational Complexity
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Kitaev%E2%80%98s%20toric%20code/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kitaev‘s toric code
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Later%20notes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Later notes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../No-Cloning%20Theorem/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  No Cloning Theorem
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Overview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Protocols/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Protocols
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Quantum%20Error%20Correction/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quantum Error Correction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Quantum%20Hamming%20Bound/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quantum Hamming Bound
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Quantum%20Threshold%20Theorem/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quantum Threshold Theorem
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Quantum%20teleportation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quantum teleportation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Steane%20Code/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Steane Code
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Surface%20Code/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Surface Code
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../distance/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Distance
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../indirect%20measurement/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Indirect measurement
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Deutsch-Josza/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Algorithms
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Gates/Classical%20Logic%20Gates/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Gates
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Math/Kronecker%20Delta/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Math
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Quantum%20Mechanics/Ancilla/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Quantum Mechanics
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Majeed&#39;s Quantum Notes" class="md-nav__button md-logo" aria-label="Majeed's Quantum Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Majeed's Quantum Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3-qubit%20code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 qubit code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../9-qubit%20Shor%20code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9 qubit Shor code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computational%20Complexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computational Complexity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Kitaev%E2%80%98s%20toric%20code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kitaev‘s toric code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Later%20notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Later notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../No-Cloning%20Theorem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    No Cloning Theorem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Protocols
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Quantum%20Error%20Correction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Error Correction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Quantum%20Hamming%20Bound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Hamming Bound
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Quantum%20Threshold%20Theorem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Threshold Theorem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Quantum%20teleportation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum teleportation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Steane%20Code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Steane Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Surface%20Code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Surface Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../distance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Distance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../indirect%20measurement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Indirect measurement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Algorithms
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Deutsch-Josza/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deutsch Josza
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Deutsch
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deutsch
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#possible-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Possible outcomes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classical-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classical Computation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Computation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#circuit-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuit implementation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Grover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grover
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Oracle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Oracle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quantum%20Fourier%20Transform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Fourier Transform
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quantum%20Order%20Finding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Order Finding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quantum%20Phase%20Estimation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Phase Estimation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Shor%E2%80%98s%20algorithm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shor‘s algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Gates
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19">
+            <span class="md-nav__icon md-icon"></span>
+            Gates
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Classical%20Logic%20Gates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Classical Logic Gates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Clifford%20Gates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clifford Gates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Gates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Gottesmann-Knill%20theorem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gottesmann Knill theorem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Measurement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Measurement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Solovay-Kitaev-Theorem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Solovay Kitaev Theorem
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Universality%20of%20Quantum%20Gates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Universality of Quantum Gates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_19_8" id="__nav_19_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Single qubit gates
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_19_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19_8">
+            <span class="md-nav__icon md-icon"></span>
+            Single qubit gates
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Single-qubit%20gates/Hadamard-Gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hadamard Gate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Single-qubit%20gates/Phase-Gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Phase Gate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Single-qubit%20gates/Single-qubit%20gates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Single qubit gates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Single-qubit%20gates/T-Gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    T Gate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19_8_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_19_8_5" id="__nav_19_8_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pauli Gates
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_19_8_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19_8_5">
+            <span class="md-nav__icon md-icon"></span>
+            Pauli Gates
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Single-qubit%20gates/Pauli%20Gates/Identity%20Gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Identity Gate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Single-qubit%20gates/Pauli%20Gates/Pauli%20Gates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pauli Gates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Single-qubit%20gates/Pauli%20Gates/X%20Gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    X Gate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Single-qubit%20gates/Pauli%20Gates/Y%20Gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Y Gate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Single-qubit%20gates/Pauli%20Gates/Z%20Gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Z Gate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19_8_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_19_8_6" id="__nav_19_8_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Rotation Gates
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_19_8_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19_8_6">
+            <span class="md-nav__icon md-icon"></span>
+            Rotation Gates
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Single-qubit%20gates/Rotation%20Gates/Rotation%20Gates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rotation Gates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Single-qubit%20gates/Rotation%20Gates/Rx%20Gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rx Gate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Single-qubit%20gates/Rotation%20Gates/Ry%20Gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ry Gate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Single-qubit%20gates/Rotation%20Gates/Rz%20gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rz gate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_19_9" id="__nav_19_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Two qubit gates
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_19_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19_9">
+            <span class="md-nav__icon md-icon"></span>
+            Two qubit gates
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Two-qubit%20gates/CNOT%20gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CNOT gate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Two-qubit%20gates/Controlled-U%20Gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Controlled U Gate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Two-qubit%20gates/SWAP%20Gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SWAP Gate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Two-qubit%20gates/Toffoli%20Gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Toffoli Gate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Gates/Two-qubit%20gates/Two-qubit%20gates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Two qubit gates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Math
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20">
+            <span class="md-nav__icon md-icon"></span>
+            Math
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math/Kronecker%20Delta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kronecker Delta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math/Trace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Trace
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_21" >
+        
+          
+          <label class="md-nav__link" for="__nav_21" id="__nav_21_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Quantum Mechanics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_21_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_21">
+            <span class="md-nav__icon md-icon"></span>
+            Quantum Mechanics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Quantum%20Mechanics/Ancilla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ancilla
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Quantum%20Mechanics/Bloch%20sphere/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bloch sphere
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Quantum%20Mechanics/Observations%20on%20Preperations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Observations on Preperations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Quantum%20Mechanics/Quantum%20Entanglement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Entanglement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Quantum%20Mechanics/Quantum%20dynamics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum dynamics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Quantum%20Mechanics/Rules%20of%20Quantum%20Theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rules of Quantum Theory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#possible-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Possible outcomes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classical-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classical Computation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantum Computation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#circuit-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Circuit implementation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Deutsch</h1>
+
+<p>The Deutsch Algorithm was developed by David Deutsch (1992). This was the first algorithm that showed the potential computational power of quantum computation.
+The Algorithm demonstrates typical features and ingredients of quantum computation for example [Quantum Superposition]] and [<a href="Quantum Superposition]] and [[Quantum Entanglement.md">Quantum Entanglement</a>.</p>
+<h3 id="setting">Setting</h3>
+<ul>
+<li>Consider a single bit $x= {0,1}$</li>
+<li>A black box that computes a function $f(x)$</li>
+<li>We do not know (and do not care) how, but every evaluation of f is extremely costly (e. g. in terms of computational time)
+    $\Rightarrow$ Thus, we want to limit the number of evaluations of f to an absolute minimum</li>
+</ul>
+<h3 id="possible-outcomes">Possible outcomes</h3>
+<p>$f(0)=0;1$
+ $f(1)=0;1$
+$\Rightarrow$ 4 possibilities
+So there are two cases:
+$f(0)=f(1)$: f is constant, all bits are the same.
+or
+$f(0) \neq f(1)$: f is balanced, half of the bits are 0, the other half 1.</p>
+<p>We are not interested in the individual values of $f(0)$ and $f(1)$ but only in the global property whether f is constant or balanced.</p>
+<h3 id="classical-computation">Classical Computation</h3>
+<ul>
+<li>First compute individual values $f(0)$ and $f(1)$. We get more information than we need, namely on the individual values.</li>
+<li>In a second step we compare the two values
+$\Rightarrow$ We need <strong>two</strong> evaluations</li>
+</ul>
+<h3 id="quantum-computation">Quantum Computation</h3>
+<ul>
+<li><strong>Claim</strong>: We can do better, with a single evaluation of f. We won‘t (in fact must not) obtain any information on the individual values of f, yet we will be able to answer the question</li>
+<li>We will use two qubits,<ul>
+<li>$|x \rangle = \alpha_x | 0 \rangle + \beta_x | 1 \rangle$</li>
+<li>$|y\rangle = \alpha_y | 0 \rangle + \beta_y | 1 \rangle$</li>
+</ul>
+</li>
+<li>in an initial product state<ul>
+<li>$|x,y \rangle = | x \rangle | y \rangle$</li>
+</ul>
+</li>
+<li>We will use a two-qubit unitary transformation<ul>
+<li>$U_f: | x \rangle | y \rangle \rightarrow |x,y \oplus f(x) \rangle$</li>
+<li>Here $\oplus$ denotes addition modulo 2</li>
+</ul>
+</li>
+<li>The transformation leaves the first qubit unchanged and acts on the second one as follows:<ul>
+<li>If $f(x)=0$ y is not changed</li>
+<li>If $f(x)=1$ y is flipped $0 \rightarrow 1; 1 \rightarrow 0$</li>
+</ul>
+</li>
+<li>Remarks:<ul>
+<li>After the transformation, the state $|x, y \oplus f(x) \rangle$ can not be written as a product state: $|x, y \oplus f(x) \rangle \neq |x \rangle | y \oplus f(x) \rangle$</li>
+<li>$U_f$ is unitary and Hermitian because $U_f^2= \mathbb{I}$</li>
+<li>Every application of $U_f$ requires <strong>one</strong> evaluation of f</li>
+</ul>
+</li>
+<li>For $|+ \rangle |0 \rangle$ we get:<ul>
+<li>$U_f |+ \rangle |0\rangle = U_f \frac{1}{\sqrt{2}} (|0 \rangle |0\rangle + |1 \rangle |0\rangle) = \frac{1}{\sqrt{2}} (|0 \rangle |f(0)\rangle + |1 \rangle |f(1)\rangle)$</li>
+<li>This state contains both functions in superposition in the second qubit and in general entangled with the first qubit</li>
+<li>If we measure the first qubit the second qubit collapses to either $|f(0) \rangle$ or $|f(1) \rangle$ with probability 1/2. This is not better than one evaluation in a classical algorithm because we get to know the both individual values (with uncertainty). It is even worse.
+$\Rightarrow$ [Quantum Parallelism]] is an ingredient for speedup but not enough. We also need [<a href="Quantum Parallelism]] is an ingredient for speedup but not enough. We also need [[Algorithmic Interference.md">Algorithmic Interference</a>, i. e. a way of constructively interfering the paths such that the information we are interested in (f balanced or constant) is <strong>amplified</strong>, and the information we don‘t care about (individual values $f(0)$ and $f(1)$) becomes inaccessible.</li>
+</ul>
+</li>
+<li>If we prepare the $|-\rangle$-state we get the following:<ul>
+<li>$U_f |x \rangle |-\rangle = |x\rangle \frac{1}{\sqrt{2}}(|0 \oplus f(x) \rangle - |1 \oplus f(x) \rangle) = (-1)^{f(x)} |x \rangle |-\rangle$   </li>
+</ul>
+</li>
+<li>For $|+ \rangle |- \rangle$ we get:<ul>
+<li>$U_f |+ \rangle |-\rangle = U_f \frac{1}{\sqrt{2}} (|0 \rangle |-\rangle + |1 \rangle |-\rangle) = \frac{1}{\sqrt{2}} ((-1)^{f(0)}|0 \rangle |-\rangle + (-1)^{f(1)}|1 \rangle |-\rangle)$  </li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>$f(0)$</th>
+<th>$f(1)$</th>
+<th>$U_f |+ \rangle |-\rangle$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>$|+ \rangle |-\rangle$</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>$-|- \rangle |-\rangle$</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>$|- \rangle |-\rangle$</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>$-|+ \rangle |-\rangle$</td>
+</tr>
+<tr>
+<td>- So the first qubit is measured as $</td>
+<td>+ \rangle$ for a constant function and $</td>
+<td>- \rangle$ for a balanced function</td>
+</tr>
+<tr>
+<td>- The information of the individual function values appear as a global phase factor ($\pm 1$) which can not be measured directly.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- Final Step: $X_1$ measurement</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$\rightarrow$ the probability of the $</td>
+<td>+ \rangle$-state is 1 for f constant</td>
+<td></td>
+</tr>
+<tr>
+<td>$\rightarrow$ the probability of the $</td>
+<td>- \rangle$-state is 1 for f balanced</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>With specific preparation of  and an <a href="../Oracle/">Oracle</a> which is an implementation of $f(x)$ </li>
+<li>Remarks:<ul>
+<li>We evaluated f only once</li>
+<li>Speedup due to <a href="Quantum Parallelism.md">Quantum Parallelism</a> is 2 (Constant)</li>
+</ul>
+</li>
+</ul>
+<h3 id="circuit-implementation">Circuit implementation</h3>
+<p><img alt="Deutsch.png" src="Deutsch.png.md" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
